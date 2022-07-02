@@ -80,7 +80,8 @@ public abstract class Person {
                 ", Số ĐT: " + phoneNumber +
                 ", Email: " + email;
     }
-    public String getToCsv(){
-        return name+","+birthday+","+gender+","+id+","+phoneNumber+","+email;
+
+    public String getToCsv() {
+        return name + "," + birthday + "," + gender + "," + id + "," + phoneNumber + "," + email;
     }
 }

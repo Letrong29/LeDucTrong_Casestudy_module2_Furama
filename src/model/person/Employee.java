@@ -63,7 +63,7 @@ public class Employee extends Person{
     public String toString() {
         return "Nhân viên{" +
                 super.toString() +
-                ", Mã nhân viên" + employeeID +
+                ", Mã nhân viên: " + employeeID +
                 ", Trình độ học vấn: " + academyLevel +
                 ", Chức vụ: " + position +
                 ", Lương: " + salary +

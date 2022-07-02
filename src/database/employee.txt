@@ -1,0 +1,4 @@
+Le Duc Trong,1999-12-29,Nam,206148917,934774152,Letrong2929@gmail.com,10222,Đại Học,Giám Đốc,1000000000
+Nguyen Thi Quynh Nhi,1999-05-29,Nữ,123456789,795765518,Nhimin16@gmail.com,123,Đại Học,Giám Đốc,10000000
+Nguyen Van An,2000-12-21,Nam,98123675,967843209,Annguyen@gmail.com,943,Trung Cấp,Phục Vụ,2000
+Pham Thi Binh,2000-06-25,Nữ,345654657,678435267,Binhpham@gmail.com,34534,Cao Đẳng,Lễ Tân,23000

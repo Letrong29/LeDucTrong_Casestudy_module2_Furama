@@ -40,7 +40,7 @@ public class ReadAndWriteEmployee {
         List<String> stringList = new ArrayList<>();
 
         for (Employee employee : employeeList) {
-            stringList.add(employee.toString());
+            stringList.add(employee.getToCsv());
         }
 
         ReadAndWriteFile.write(pathFile,stringList,append);

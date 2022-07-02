@@ -52,9 +52,9 @@ public class Customer extends Person{
     public String toString() {
         return "Khách hàng{" +
                 super.toString() +
-                ", Mã khách hàng" + customerID +
-                ", Loại khách hàng" + typeOfCustomer +
-                ", địa chỉ" + address +
+                ", Mã khách hàng: " + customerID +
+                ", Loại khách hàng: " + typeOfCustomer +
+                ", địa chỉ: " + address +
                 '}';
     }
 

@@ -1,7 +1,6 @@
-package util.util_search.search_person;
+package util.util_search_and_check.search_person;
 
 import model.person.Employee;
-import util.util_read_and_write_file.ReadAndWriteEmployee;
 
 import java.util.List;
 import java.util.Scanner;
@@ -31,10 +30,5 @@ public class SearchEmployee {
         return index;
     }
 
-    public static void main(String[] args) {
-        String EMPLOYEE_TXT = "src/database/employee.txt";
-        List<Employee> employeeList = ReadAndWriteEmployee.read(EMPLOYEE_TXT);
 
-        System.out.println(search(employeeList));
-    }
 }

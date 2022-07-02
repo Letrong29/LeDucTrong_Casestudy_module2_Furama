@@ -7,6 +7,7 @@ import util.util_choices.ChoiceAcademyLevel;
 import util.util_choices.ChoiceGender;
 import util.util_choices.ChoicePosition;
 import util.util_read_and_write_file.ReadAndWriteEmployee;
+import util.util_search_and_check.search_person.SearchEmployee;
 
 import java.time.LocalDate;
 import java.util.List;
@@ -26,9 +27,9 @@ public class EmployeeServiceImpl implements IEmployeeService {
 
         String gender = ChoiceGender.choice();
 
-        int id = EnterID.enter();
+        int id = EnterID.ofEmployee(employeeList);
 
-        int phoneNumber = EnterNumberPhone.enter();
+        int phoneNumber = EnterNumberPhone.ofEmployee(employeeList);
 
         String email = EnterEmail.enter();
 
@@ -56,62 +57,84 @@ public class EmployeeServiceImpl implements IEmployeeService {
 
     @Override
     public void edit() {
-        List<Employee> employeeList = null; // Code đọc file
+        List<Employee> employeeList = ReadAndWriteEmployee.read(EMPLOYEE_TXT);
 
-        // Chỉnh sửa tên (dùng định dạng regex)
-        System.out.println("Chỉnh sửa tên");
-        String name = scanner.nextLine();
+        int index = SearchEmployee.search(employeeList);
 
-        // Chỉnh sửa ngày tháng năm sinh (định dạng lại LocalDate)
-        System.out.println("Chỉnh sửa ngày tháng năm sinh");
-        String day = scanner.nextLine();
-        LocalDate birthDay = LocalDate.parse(day);
-
-        // Chỉnh sửa giới tính (dùng class util chọn dới tính)
-        System.out.println("Chỉnh sửa giới tính");
-        String gender = scanner.nextLine();
-
-        // Chỉnh sửa id (dùng định dạng regex)
-        System.out.println("Chỉnh sửa số CMND");
-        int id = Integer.parseInt(scanner.nextLine());
-
-        // Chỉnh sửa điện thoại (dùng định dạng regex)
-        System.out.println("Chỉnh sửa số điện toại");
-        int numberPhone = Integer.parseInt(scanner.nextLine());
-
-        // Chỉnh sửa Email (dùng định dạng regex)
-        System.out.println("Chỉnh sửa Email");
-        String email = scanner.nextLine();
-
-        // Chỉnh sửa mã nhân viên
-        System.out.println("Chỉnh sửa mã nhân viên");
-        int employeeID = Integer.parseInt(scanner.nextLine());
-
-        // Chỉnh sửa trình độ học vấn (tạo switch case trong backed util)
-        System.out.println("Chỉnh sửa trình độ học vấn");
-        String academyLevel = scanner.nextLine();
-
-        // Chỉnh sửa chức vụ (tạo switch case trong backed util)
-        System.out.println("Chỉnh sửa chức vụ");
-        String position = scanner.nextLine();
-
-        // Chỉnh sửa lương
-        System.out.println("Chỉnh sửa lương");
-        int salary = Integer.parseInt(scanner.nextLine());
-
-        // dùng 1 class util tìm kiếm (tìm theo tên, theo id, theo sđt),
-        // class này trả về index của đối tượng đó trong ArrayList nếu tìm thấy
-        // nếu index != -1 thì cho phép nhập thông tin chỉnh sửa, và set lại toàn bộ thông tin
-        // ngược lại nếu ko tìm thấy, thì dùng do while cho nhập lại
-
-        //code ghi file
+        if (index != -1){
+            System.out.println(employeeList.get(index));
+            System.out.println("Bạn muốn thay đổi thông tin nào ? \n" +
+                    "1. Thay đổi Họ và tên \n" +
+                    "2. Thay đổi ngày tháng năm sinh \n" +
+                    "3. Thay đổi giới tính \n" +
+                    "4. Thay đổi số CMND \n" +
+                    "5. Thay đổi số điện thoại \n" +
+                    "6. Thay đổi địa chỉ Email \n" +
+                    "7. Thay đổi mã nhân viên \n" +
+                    "8. Thay đổi trình độ \n" +
+                    "9. Thay đổi chức vụ \n" +
+                    "10. Thay đổi lương");
+            int choice = Integer.parseInt(scanner.nextLine());
+            switch (choice){
+                case 1:
+                    String name = EnterName.enter();
+                    employeeList.get(index).setName(name);
+                    System.out.println("Cập nhập tên thành công");
+                    break;
+                case 2:
+                    LocalDate birthDay = EnterBirthDay.enter();
+                    employeeList.get(index).setBirthday(birthDay);
+                    System.out.println("Cập nhập ngày sinh thành công");
+                    break;
+                case 3:
+                    String gender = ChoiceGender.choice();
+                    employeeList.get(index).setGender(gender);
+                    System.out.println("Chập nhập giới tính thành công");
+                    break;
+                case 4:
+                    int id = EnterID.ofEmployee(employeeList);
+                    employeeList.get(index).setId(id);
+                    System.out.println("Chập nhập số CMND thành công");
+                    break;
+                case 5:
+                    int phoneNumber = EnterNumberPhone.ofEmployee(employeeList);
+                    employeeList.get(index).setPhoneNumber(phoneNumber);
+                    System.out.println("Chập nhập số điện thoại thành công");
+                    break;
+                case 6:
+                    String email = EnterEmail.enter();
+                    employeeList.get(index).setEmail(email);
+                    System.out.println("Chập nhập địa chỉ Email thành công");
+                    break;
+                case 7:
+                    int employeeID = EnterEmployeeID.enter();
+                    employeeList.get(index).setEmployeeID(employeeID);
+                    System.out.println("Chập nhập mã nhân viên thành công");
+                    break;
+                case 8:
+                    String academyLevel = ChoiceAcademyLevel.choice();
+                    employeeList.get(index).setAcademyLevel(academyLevel);
+                    System.out.println("Chập nhập thành công");
+                    break;
+                case 9:
+                    String position = ChoicePosition.choice();
+                    employeeList.get(index).setPosition(position);
+                    System.out.println("Chập nhập chức vụ thành công");
+                    break;
+                case 10:
+                    int salary = EnterSalary.enter();
+                    employeeList.get(index).setSalary(salary);
+                    System.out.println("Chập nhập lương thành công");
+                    break;
+                default:
+                    System.out.println("Chọn sai !");
+                    break;
+            }
+        }
+        ReadAndWriteEmployee.write(EMPLOYEE_TXT,employeeList,true);
     }
 
     @Override
     public void delete() {
-        // dùng 1 class util tìm kiếm (tìm theo tên, theo id, theo sđt),
-        // class này trả về index của đối tượng đó trong ArrayList nếu tìm thấy
-        // nếu index != -1 thì hiển thị đối tượng và hỏi ng dùng có thật sự muốn xóa hay không ?
-        // ngược lại nếu ko tìm thấy, thì dùng do while cho nhập lại
     }
 }

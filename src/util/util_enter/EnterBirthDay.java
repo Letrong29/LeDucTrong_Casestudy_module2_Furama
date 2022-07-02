@@ -26,8 +26,4 @@ public class EnterBirthDay {
 
         return birthDay;
     }
-
-    public static void main(String[] args) {
-        enter();
-    }
 }
