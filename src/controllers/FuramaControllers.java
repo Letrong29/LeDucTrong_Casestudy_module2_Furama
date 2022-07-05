@@ -10,14 +10,14 @@ public class FuramaControllers {
         int choice;
         do {
             try{
-                System.out.println("HỆ THỐNG QUẢNG LÝ FURAMA"
-                        + "\n 1. Quảng lý nhân viên"
-                        + "\n 2. Quảng lý khách hàng"
-                        + "\n 3. Quảng lý cơ sở hạ tầng"
-                        + "\n 4. Quảng lý Booking"
-                        + "\n 5. Quảng lý khuyến mãi"
-                        + "\n 6. Thoát"
-                        + "\n Vui lòng chọn chức năng"
+                System.out.println("<=={ HỆ THỐNG QUẢNG LÝ FURAMA }==>"
+                        + "\n \t 1. Quảng lý nhân viên"
+                        + "\n \t 2. Quảng lý khách hàng"
+                        + "\n \t 3. Quảng lý cơ sở hạ tầng"
+                        + "\n \t 4. Quảng lý Booking"
+                        + "\n \t 5. Quảng lý khuyến mãi"
+                        + "\n \t 6. Thoát"
+                        + "\n > [ Vui lòng chọn chức năng ] <"
                 );
                 choice = Integer.parseInt(scanner.nextLine());
                 switch (choice){
@@ -37,18 +37,22 @@ public class FuramaControllers {
                         PromotionControllers.menu();
                         break;
                     case 6:
-                        System.out.println("Bạn đã thoát hệ thống");
+                        System.out.println("> [ Bạn đã thoát hệ thống ] < ");
                         System.exit(0);
                         break;
                     default:
-                        System.out.println("lựa chọn không hợp lệ! mời chọn lại");
+                        System.out.println("> [ lựa chọn không hợp lệ! mời chọn lại ] <");
                         break;
                 }
             }catch (NumberFormatException e){
-                System.out.println("Nhập số !");
+                System.out.println("> [ Nhập số ! ] <");
             }
 
         }while (true);
 
+    }
+
+    public static void main(String[] args) {
+        displayMainMenu();
     }
 }

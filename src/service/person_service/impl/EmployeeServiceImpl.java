@@ -42,7 +42,7 @@ public class EmployeeServiceImpl implements IEmployeeService {
         int salary = EnterSalary.enter();
 
         employeeList.add(new Employee(name, birthDay, gender, id, phoneNumber, email, employeeID, academyLevel, position, salary));
-        System.out.println("Thêm mới thành công");
+        System.out.println("---< Thêm mới thành công >---");
 
         ReadAndWriteEmployee.write(EMPLOYEE_TXT, employeeList, true);
     }
@@ -134,7 +134,5 @@ public class EmployeeServiceImpl implements IEmployeeService {
         ReadAndWriteEmployee.write(EMPLOYEE_TXT,employeeList,true);
     }
 
-    @Override
-    public void delete() {
-    }
+
 }

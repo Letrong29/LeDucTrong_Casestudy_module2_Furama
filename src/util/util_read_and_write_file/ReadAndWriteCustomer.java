@@ -4,13 +4,14 @@ import model.person.Customer;
 
 import java.time.LocalDate;
 import java.util.ArrayList;
+import java.util.LinkedList;
 import java.util.List;
 
 public class ReadAndWriteCustomer {
 
     public static List<Customer> read(String pathFile){
         List<String> stringList = ReadAndWriteFile.readFile(pathFile);
-        List<Customer> customerList = new ArrayList<>();
+        List<Customer> customerList = new LinkedList<>();
 
         String[] array = null;
 
@@ -34,7 +35,7 @@ public class ReadAndWriteCustomer {
     }
 
     public static void write(String pathFile, List<Customer> customerList, boolean append){
-        List<String> stringList = new ArrayList<>();
+        List<String> stringList = new LinkedList<>();
 
         for (Customer customer:customerList) {
             stringList.add(customer.getToCsv());

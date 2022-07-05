@@ -5,7 +5,5 @@ public interface IService {
 
     void display();
 
-    void edit();
 
-    void delete();
 }

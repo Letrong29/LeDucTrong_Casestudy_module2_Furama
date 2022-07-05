@@ -12,17 +12,19 @@ public class Booking {
     private LocalDate endDay;
     private Customer getCustomerID;
     private Facility nameService;
+    private Facility serviceID;
 
     public Booking() {
 
     }
 
-    public Booking(int bookingCode, LocalDate startDay, LocalDate endDay, Customer employeeID, Facility nameService) {
+    public Booking(int bookingCode, LocalDate startDay, LocalDate endDay, Customer employeeID, Facility nameService, Facility serviceID) {
         this.bookingID = bookingCode;
         this.startDay = startDay;
         this.endDay = endDay;
         this.getCustomerID = employeeID;
         this.nameService = nameService;
+        this.serviceID = serviceID;
     }
 
     public int getBookingID() {
@@ -65,6 +67,14 @@ public class Booking {
         this.nameService = nameService;
     }
 
+    public Facility getServiceID() {
+        return serviceID;
+    }
+
+    public void setServiceID(Facility serviceID) {
+        this.serviceID = serviceID;
+    }
+
     @Override
     public String toString() {
         return "Booking{" +
@@ -73,10 +83,11 @@ public class Booking {
                 ", Ngày kết thúc: " + endDay +
                 ", Mã khách hàng: " + getCustomerID.getCustomerID() +
                 ", Tên dịch vụ: " + nameService.getServiceName() +
+                ", Mã dịch vụ: " + serviceID.getServiceID() +
                 '}';
     }
 
     public String getToCsv(){
-        return bookingID + "," + startDay + "," + endDay + "," + getCustomerID.getCustomerID() + "," + nameService;
+        return bookingID + "," + startDay + "," + endDay + "," + getCustomerID.getCustomerID() + "," + nameService.getServiceName() + "," + serviceID.getServiceID();
     }
 }

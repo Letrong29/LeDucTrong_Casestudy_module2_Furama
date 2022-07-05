@@ -16,7 +16,7 @@ public class BookingControllers {
                         + "\n 4. Hiển thị danh sách hợp đồng"
                         + "\n 5. Chỉnh sửa hợp đồng"
                         + "\n 6. Trở về menu chính"
-                        + "\n Bạn muốn chọ chức năng ?"
+                        + "\n Bạn muốn chọn chức năng ?"
                 );
                 choice = Integer.parseInt(scanner.nextLine());
                 switch (choice){

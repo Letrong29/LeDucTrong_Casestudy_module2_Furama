@@ -13,14 +13,4 @@ public class ContractService implements IContractService {
     public void display() {
 
     }
-
-    @Override
-    public void edit() {
-
-    }
-
-    @Override
-    public void delete() {
-
-    }
 }

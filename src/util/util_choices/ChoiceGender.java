@@ -7,27 +7,31 @@ public class ChoiceGender {
 
     public static String choice(){
         Scanner scanner = new Scanner(System.in);
-        boolean flag;
+        boolean flag = true;
         String gender = "";
 
         do {
-            flag = false;
-            System.out.println(
-                    "Chọn giới tính" + "\n" +
-                            "1. Nam" + "\n" +
-                            "2. Nữ");
-            int choice = Integer.parseInt(scanner.nextLine());
-            switch (choice) {
-                case 1:
-                    gender = "Nam";
-                    break;
-                case 2:
-                    gender = "Nữ";
-                    break;
-                default:
-                    System.out.println("giới tính sai ! vui long chọn lại");
-                    flag = true;
-                    break;
+            try {
+                System.out.println(
+                        "Chọn giới tính" + "\n" +
+                                "1. Nam" + "\n" +
+                                "2. Nữ");
+                int choice = Integer.parseInt(scanner.nextLine());
+                switch (choice) {
+                    case 1:
+                        gender = "Nam";
+                        flag = false;
+                        break;
+                    case 2:
+                        gender = "Nữ";
+                        flag = false;
+                        break;
+                    default:
+                        System.out.println("giới tính sai ! vui long chọn lại");
+                        break;
+                }
+            }catch (NumberFormatException e){
+                System.out.println("Nhập số !");
             }
         } while (flag);
 

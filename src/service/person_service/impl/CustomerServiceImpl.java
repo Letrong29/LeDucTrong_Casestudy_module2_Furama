@@ -38,7 +38,7 @@ public class CustomerServiceImpl implements ICustomerService {
         String address = EnterAddress.enter();
 
         customerList.add(new Customer(name, birthDay, gender, id, phoneNumber, email, customerId, typeOfCustomer, address));
-        System.out.println("Thêm mới thành công");
+        System.out.println("---< Thêm mới thành công >---");
 
         ReadAndWriteCustomer.write(CUSTOMER_TXT, customerList, true);
     }
@@ -124,10 +124,5 @@ public class CustomerServiceImpl implements ICustomerService {
         }
 
         ReadAndWriteCustomer.write(CUSTOMER_TXT, customerList, true);
-    }
-
-    @Override
-    public void delete() {
-
     }
 }

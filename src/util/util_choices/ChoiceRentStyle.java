@@ -2,51 +2,47 @@ package util.util_choices;
 
 import java.util.Scanner;
 
-public class ChoiceAcademyLevel {
+public class ChoiceRentStyle {
 
     public static String choice(){
         Scanner scanner = new Scanner(System.in);
-        String academyLevel = "";
+        String rentStyle = "";
         boolean flag = true;
 
         do {
             try {
-
-                System.out.println("Chọn trình độ học vấn:" + "\n" +
-                        "1. Trung Cấp" + "\n" +
-                        "2. Cao Đẳng" + "\n" +
-                        "3. Đại Học" + "\n" +
-                        "4. Sau Đại Học"
+                System.out.println("Bạn muốn thuê theo ?"
+                        + "\n 1. Năm"
+                        + "\n 2. Tháng"
+                        + "\n 3. Ngày"
+                        + "\n 4. Giờ"
                 );
                 int choice = Integer.parseInt(scanner.nextLine());
                 switch (choice){
                     case 1:
-                        academyLevel = "Trung Cấp";
+                        rentStyle = "Thuê theo năm";
                         flag = false;
                         break;
                     case 2:
-                        academyLevel = "Cao Đẳng";
+                        rentStyle = "Thuê theo tháng";
                         flag = false;
                         break;
                     case 3:
-                        academyLevel = "Đại Học";
+                        rentStyle = "Thuê theo ngày";
                         flag = false;
                         break;
                     case 4:
-                        academyLevel = "Sau Đại Học";
+                        rentStyle = "Thuê theo giờ";
                         flag = false;
                         break;
                     default:
-                        System.out.println("Chọn sai ! vui long chọn lại");
+                        System.out.println("Lựa chọn không hợp lệ !");
+                        break;
                 }
             }catch (NumberFormatException e){
                 System.out.println("Nhập số !");
             }
-
         }while (flag);
-
-        return academyLevel;
+        return rentStyle;
     }
-
-
 }

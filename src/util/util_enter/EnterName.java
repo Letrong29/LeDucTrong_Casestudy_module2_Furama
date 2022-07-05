@@ -5,6 +5,7 @@ import util.util_regex.NameRegex;
 import java.util.Scanner;
 
 public class EnterName {
+
     public static String enter(){
         Scanner scanner = new Scanner(System.in);
 

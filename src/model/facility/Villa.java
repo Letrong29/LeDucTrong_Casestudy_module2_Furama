@@ -2,21 +2,21 @@ package model.facility;
 
 public class Villa extends Facility {
     private int roomStandard; //tiêu chuẩn phòng
-    private int poolArea; // diện tích hồ bơi
+    private double poolArea; // diện tích hồ bơi
     private int numberOfFloors; // số tầng
 
     public Villa() {
 
     }
 
-    public Villa(int roomStandard, int poolArea, int numberOfFloors) {
+    public Villa(int roomStandard, double poolArea, int numberOfFloors) {
         this.roomStandard = roomStandard;
         this.poolArea = poolArea;
         this.numberOfFloors = numberOfFloors;
     }
 
-    public Villa(String serviceName, int usableArea, int rentalCosts, int maxiMumNumberOfPeople, String rentStyle, int roomStandard, int poolArea, int numberOfFloors) {
-        super(serviceName, usableArea, rentalCosts, maxiMumNumberOfPeople, rentStyle);
+    public Villa(String serviceName, double usableArea, int rentalCosts, int maxiMumNumberOfPeople, String rentStyle, String serviceID, int roomStandard, double poolArea, int numberOfFloors) {
+        super(serviceName, usableArea, rentalCosts, maxiMumNumberOfPeople, rentStyle, serviceID);
         this.roomStandard = roomStandard;
         this.poolArea = poolArea;
         this.numberOfFloors = numberOfFloors;
@@ -30,11 +30,11 @@ public class Villa extends Facility {
         this.roomStandard = roomStandard;
     }
 
-    public int getPoolArea() {
+    public double getPoolArea() {
         return poolArea;
     }
 
-    public void setPoolArea(int poolArea) {
+    public void setPoolArea(double poolArea) {
         this.poolArea = poolArea;
     }
 
