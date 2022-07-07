@@ -3,7 +3,6 @@ package util.util_enter;
 import model.person.Customer;
 import model.person.Employee;
 import util.util_exeption.ElementAlreadyExists;
-import util.util_read_and_write_file.ReadAndWriteCustomer;
 import util.util_regex.NumberPhoneRegex;
 import util.util_search_and_check.search_person.CheckCustomer;
 import util.util_search_and_check.search_person.CheckEmployee;
@@ -67,12 +66,5 @@ public class EnterNumberPhone {
         }while (flag);
 
         return Integer.parseInt(numberPhone);
-    }
-
-    public static void main(String[] args) {
-        String CUSTOMER_TXT = "src/database/customer.txt";
-        List<Customer> customerList = ReadAndWriteCustomer.read(CUSTOMER_TXT);
-
-        System.out.println(ofCustomer(customerList));
     }
 }

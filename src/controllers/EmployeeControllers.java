@@ -11,12 +11,13 @@ public class EmployeeControllers {
         boolean flag = true;
         do {
             try{
-                System.out.println("<=={ QUẢNG LÝ NHÂN VIÊN }==>"
+                System.out.println(
+                        " (...... QUẢN LÝ NHÂN VIÊN ......)"
                         + "\n \t 1. Hiển thị danh sách nhân viên"
                         + "\n \t 2. Thêm nhân viên mới"
                         + "\n \t 3. Chỉnh sửa thông tin nhân viên"
                         + "\n \t 4. Trở về menu chính"
-                        + "\n > [ Bạn muốn chọn chức năng ? ] <"
+                        + "\n(--- Bạn muốn chọn chức năng ? ---)"
                 );
                 Scanner scanner = new Scanner(System.in);
                 choice = Integer.parseInt(scanner.nextLine());

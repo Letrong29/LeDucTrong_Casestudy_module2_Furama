@@ -1,7 +1,5 @@
 package util.util_enter;
 
-import com.oracle.xmlns.internal.webservices.jaxws_databinding.SoapBindingParameterStyle;
-
 import java.util.Scanner;
 
 public class EnterAreaOf {

@@ -1,7 +1,5 @@
 package controllers;
 
-import service.person_service.impl.EmployeeServiceImpl;
-
 import java.util.Scanner;
 
 public class FuramaControllers {
@@ -10,14 +8,15 @@ public class FuramaControllers {
         int choice;
         do {
             try{
-                System.out.println("<=={ HỆ THỐNG QUẢNG LÝ FURAMA }==>"
+                System.out.println(
+                        " (...... HỆ THỐNG QUẢN LÝ FURAMA ......)"
                         + "\n \t 1. Quảng lý nhân viên"
                         + "\n \t 2. Quảng lý khách hàng"
                         + "\n \t 3. Quảng lý cơ sở hạ tầng"
                         + "\n \t 4. Quảng lý Booking"
                         + "\n \t 5. Quảng lý khuyến mãi"
                         + "\n \t 6. Thoát"
-                        + "\n > [ Vui lòng chọn chức năng ] <"
+                        + "\n(----- Vui lòng chọn chức năng -----)"
                 );
                 choice = Integer.parseInt(scanner.nextLine());
                 switch (choice){
@@ -50,9 +49,5 @@ public class FuramaControllers {
 
         }while (true);
 
-    }
-
-    public static void main(String[] args) {
-        displayMainMenu();
     }
 }

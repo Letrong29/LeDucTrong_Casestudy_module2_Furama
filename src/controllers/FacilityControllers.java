@@ -16,35 +16,37 @@ public class FacilityControllers {
         boolean flag = true;
         do {
            try {
-               System.out.println("<=={ QUẢNG LÝ CƠ SỞ HẠ TẦNG }==>"
+               System.out.println(
+                       " (...... QUẢN LÝ CƠ SỞ HẠ TẦNG ......)"
                        + "\n \t 1. Hiển thị danh sách cơ sở hạ tầng"
                        + "\n \t 2. Thêm hạng mục cơ sở mới"
                        + "\n \t 3. Hiển thị danh sách bảo trì cơ sở"
                        + "\n \t 4. Trở về menu chính"
-                       + "\n > [ Bạn muốn chọ chức năng ] <?"
+                       + "\n (--- Bạn muốn chọ chức năng ? ---)"
                );
                choice = Integer.parseInt(scanner.nextLine());
                switch (choice) {
                    case 1:
-                       System.out.println("> [ Danh sách cơ sở hạ tầng: ] <");
+                       System.out.println(" (--- Danh sách cơ sở hạ tầng: ---) ");
                        facilityService.display();
                        break;
                    case 2:
                        menuAddNewFacility();
                        break;
                    case 3:
-                       System.out.println("> [ Danh sách bảo trì cơ sở ] <");
+                       System.out.println(" (--- Danh sách bảo trì cơ sở ---)");
+                       facilityService.displayListFacilityMaintenance();
                        break;
                    case 4:
-                       System.out.println("> [ Trở về menu chính ] <");
+                       System.out.println(" (--- Trở về menu chính ---)");
                        flag = false;
                        break;
                    default:
-                       System.out.println("> [ lựa chọn không hợp lệ! mời chọn lại ] <");
+                       System.out.println(" (--- lựa chọn không hợp lệ! mời chọn lại ---)");
                        break;
                }
            }catch (NumberFormatException e){
-               System.out.println("> [ NHập số ! ] <");
+               System.out.println(" (--- NHập số ! ---)");
            }
 
         } while (flag);
@@ -52,14 +54,12 @@ public class FacilityControllers {
 
     public static void menuAddNewFacility(){
         Scanner scanner = new Scanner(System.in);
-        VillaServiceImpl villaService = new VillaServiceImpl();
-        HouseServiceImpl houseService = new HouseServiceImpl();
-        RoomServiceImpl roomService = new RoomServiceImpl();
+
         int choice;
         boolean flag = true;
         do {
             try {
-                System.out.println("> [ Thêm mới cơ sở hạ tầng ] <"
+                System.out.println(" (----- Thêm mới cơ sở hạ tầng -----) "
                         + "\n \t 1. Thêm mới Villa"
                         + "\n \t 2. Thêm mới House"
                         + "\n \t 3. Thêm mới Room"
@@ -68,27 +68,30 @@ public class FacilityControllers {
                 choice = Integer.parseInt(scanner.nextLine());
                 switch (choice) {
                     case 1:
-                        System.out.println("> [ Thêm mới Villa ] <");
+                        System.out.println(" (--- Thêm mới Villa ---) ");
+                        VillaServiceImpl villaService = new VillaServiceImpl();
                         villaService.creat();
                         break;
                     case 2:
-                        System.out.println("> [ Thêm mới House ] <");
+                        System.out.println(" (--- Thêm mới House ---)");
+                        HouseServiceImpl houseService = new HouseServiceImpl();
                         houseService.creat();
                         break;
                     case 3:
-                        System.out.println("> [ Thêm mới Room ] <");
+                        System.out.println(" (--- Thêm mới Room ---)");
+                        RoomServiceImpl roomService = new RoomServiceImpl();
                         roomService.creat();
                         break;
                     case 4:
-                        System.out.println("> [ Trở về menu chính ] <");
+                        System.out.println(" (--- Trở về menu chính ---)");
                         flag = false;
                         break;
                     default:
-                        System.out.println("> [ lựa chọn không hợp lệ! mời chọn lại ] <");
+                        System.out.println(" (--- lựa chọn không hợp lệ! mời chọn lại ---)");
                         break;
                 }
             }catch (NumberFormatException e){
-                System.out.println("> [ NHập số ! ] <");
+                System.out.println(" (--- NHập số ! ---)");
             }
 
         } while (flag);

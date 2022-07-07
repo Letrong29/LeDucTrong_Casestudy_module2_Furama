@@ -1,7 +1,5 @@
 package util.util_read_and_write_file;
 
-import model.person.Employee;
-
 import java.io.*;
 import java.util.ArrayList;
 import java.util.List;

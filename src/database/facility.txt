@@ -2,3 +2,4 @@ Villa1,45.0,34,2,Thuê theo năm,SVVL-0001,3,45.0,3,0
 Villa2,100.0,200000,12,Thuê theo ngày,SVVL-0002,4,40.0,2,0
 House1,100.0,30000,5,Thuê theo tháng,SVHO-0001,4,3,0
 Room1,35.0,1500,2,Thuê theo ngày,SVRO-0001,Nước lọc,0
+Room2,35.0,100000,2,Thuê theo ngày,SVRO-0002,Nước,0
